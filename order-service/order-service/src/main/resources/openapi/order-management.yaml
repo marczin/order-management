@@ -1,0 +1,68 @@
+openapi: 3.0.3
+info:
+  title: API Specification for order management
+  description: |-
+    A simple API to manage orders.
+  version: 1.0-SNAPSHOT
+servers:
+  - url: /v1
+paths:
+  /api/order:
+    post:
+      tags:
+        - order-manager
+      operationId: createOrder
+      description: Create new order.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewOrder'
+      responses:
+        '201':
+          description: Successfully created order.
+  /api/order/{orderId}:
+    get:
+      tags:
+        - order-manager
+      operationId: getOrderById
+      parameters:
+        - in: path
+          name: orderId
+          schema:
+            type: string
+          required: true
+          description: ID of the order to get.
+      responses:
+        '200':
+          description: Returns found order for given id.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetOrderResponse'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+
+components:
+  schemas:
+    NewOrder:
+      description: Order object to create a new order.
+      type: object
+      properties:
+        productId:
+          type: string
+        quantity:
+          type: integer
+    GetOrderResponse:
+      description: Order response.
+      type: object
+      properties:
+        orderId:
+          type: string
+        status:
+          type: string
+
+  responses:
+    NotFound:
+      description: Resource was not found.
