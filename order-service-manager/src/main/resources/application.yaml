@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: order-manager
+  datasource:
+    url: jdbc:postgresql://localhost:15432/order_manager_database
+    username: postgres
+    password: password
+  liquibase:
+    change-log: "classpath:db/changelog/db.changelog-persistance.xml"
+    enabled: true

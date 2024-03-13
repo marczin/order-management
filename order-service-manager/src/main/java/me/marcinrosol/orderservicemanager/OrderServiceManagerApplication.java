@@ -1,13 +1,13 @@
-package me.marcinrosol.orderservice;
+package me.marcinrosol.orderservicemanager;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class OrderServiceApplication {
+public class OrderServiceManagerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(OrderServiceApplication.class, args);
+        SpringApplication.run(OrderServiceManagerApplication.class, args);
     }
 
 }

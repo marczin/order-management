@@ -1,10 +1,10 @@
-package me.marcinrosol.orderservice;
+package me.marcinrosol.orderservicemanager;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class OrderServiceApplicationTests {
+class OrderServiceManagerApplicationTests {
 
     @Test
     void contextLoads() {

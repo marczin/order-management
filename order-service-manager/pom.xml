@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>me.marcinrosol</groupId>
-    <artifactId>order-service</artifactId>
+    <artifactId>order-service-manager</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>order-service</name>
-    <description>order-service</description>
+    <name>order-service-manager</name>
+    <description>order-service-manager</description>
 
     <properties>
         <java.version>21</java.version>
@@ -30,6 +30,25 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.liquibase</groupId>
+            <artifactId>liquibase-core</artifactId>
+            <version>4.26.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.7.2</version>
+        </dependency>
+
 
         <dependency>
             <groupId>org.springdoc</groupId>
@@ -70,7 +89,6 @@
                     </execution>
                 </executions>
             </plugin>
-
         </plugins>
     </build>
 
